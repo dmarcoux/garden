@@ -53,6 +53,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   # All runtime config comes from the UNIX environment, but we use dotenv to store that in files for development and testing
   gem 'dotenv-rails'
+  # Analyze code for security vulnerabilities
+  gem 'brakeman'
+  # Analyze gems for known vulnerabilities
+  gem 'bundler-audit'
 end
 
 group :development do
