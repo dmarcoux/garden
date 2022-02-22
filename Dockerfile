@@ -33,8 +33,8 @@ RUN mkdir -p $BUNDLE_PATH
 # Make $BUNDLE_PATH writable to the user
 RUN chown -R web_app_user $BUNDLE_PATH
 
-# Copy all files from the project into the container
-COPY . $WORK_DIR
+# As the web_app_user in the users group, copy all files from the project into the container
+COPY --chown=web_app_user:users . $WORK_DIR
 
 # Default value for the port of the Rails server, which can be overriden on build (with ARG) or at anytime (by setting the ENV variable)
 ARG port=3000
