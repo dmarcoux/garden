@@ -38,3 +38,9 @@
 /docker-files/home/.bash_history
 /docker-files/home/.irb_history
 /docker-files/home/.pry_history
+
+# Ignore global dotenv file to enforce usage of completely separated dotenv files for each environment
+.env
+
+# By convention, dotenv local files contain secrets and we don't want to leak them
+.env.*.local
