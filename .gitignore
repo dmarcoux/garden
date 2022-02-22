@@ -37,7 +37,7 @@
 # Ignore history files which are mounted in Docker containers
 /docker-files/home/.bash_history
 /docker-files/home/.irb_history
-/docker-files/home/.pry_history
+/docker-files/home/.rdbg_history
 
 # Ignore global dotenv file to enforce usage of completely separated dotenv files for each environment
 .env

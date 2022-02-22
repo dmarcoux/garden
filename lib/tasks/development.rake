@@ -7,7 +7,7 @@ namespace :development do
     File.new(bash_history, "w+") unless File.exist?(bash_history)
     irb_history = Rails.root.join("docker-files/home/.irb_history")
     File.new(irb_history, "w+") unless File.exist?(irb_history)
-    pry_history = Rails.root.join("docker-files/home/.pry_history")
-    File.new(pry_history, "w+") unless File.exist?(pry_history)
+    debug_history = Rails.root.join("docker-files/home/.rdbg_history")
+    File.new(debug_history, "w+") unless File.exist?(debug_history)
   end
 end
