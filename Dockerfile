@@ -43,5 +43,5 @@ ENV RAILS_PORT $port
 # Everything after the following line will be executed as the new user
 USER web_app_user
 
-# Check if gems are installed, if not install them, then start the Rails server
-CMD (bundle check || bundle install) && bundle exec rails s -b 0.0.0.0 -p $RAILS_PORT
+# Check if gems are installed, if not install them, then remove any stale PID before starting the Rails server
+CMD (bundle check || bundle install) && rm $WORK_DIR/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p $RAILS_PORT
