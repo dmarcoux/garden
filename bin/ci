@@ -3,6 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+echo "[ bin/ci ] Running linters"
+bundle exec rubocop --fail-fast --display-style-guide --fail-level convention
+
 echo "[ bin/ci ] Running unit tests"
 bin/rails test
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -37,7 +39,7 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -49,14 +51,21 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  # All runtime config comes from the UNIX environment, but we use dotenv to store that in files for development and testing
-  gem 'dotenv-rails'
   # Analyze code for security vulnerabilities
-  gem 'brakeman'
+  gem "brakeman"
   # Analyze gems for known vulnerabilities
-  gem 'bundler-audit'
+  gem "bundler-audit"
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  # All runtime config comes from the UNIX environment, but we use dotenv to
+  # store that in files for development and testing
+  gem "dotenv-rails"
+  # Linter for Ruby
+  gem "rubocop", require: false
+  # Linter for performance checks in Ruby
+  gem "rubocop-performance", require: false
+  # Linter for Rails
+  gem "rubocop-rails", require: false
 end
 
 group :development do
