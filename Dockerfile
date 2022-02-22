@@ -12,7 +12,7 @@ RUN apt-get update -qq
 RUN apt-get install -qq -y build-essential sqlite3 libsqlite3-dev redis-tools
 
 # Set the directory of the application and switch to it
-ENV WORK_DIR /app
+ENV WORK_DIR /web_app
 RUN mkdir -p $WORK_DIR
 WORKDIR $WORK_DIR
 
