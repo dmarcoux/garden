@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Setup .*_history files to keep command history in Docker setup
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# For Bash, IRB and debug gem
+touch ./docker-files/home/.bash_history ./docker-files/home/.irb_history ./docker-files/home/.rdbg_history

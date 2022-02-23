@@ -14,8 +14,8 @@ def setup
   # Setting the RAILS_ENV explicitly to be sure we actually reset the test database
   system!({ "RAILS_ENV" => "test" }, "bin/rails db:reset")
 
-  log "Creating history files for Bash, debug gem and IRB"
-  system! "bin/rails development:setup_history_files"
+  log "Seting up history files for Bash, debug gem and IRB"
+  system! "bin/setup_history_files
 
   log "Removing old logs and tempfiles"
   system! "bin/rails log:clear tmp:clear"
