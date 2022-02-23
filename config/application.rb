@@ -18,7 +18,14 @@ module Garden
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # See available generator options which are matching CLI options from `bundle exec rails g scaffold --help`
+    # https://guides.rubyonrails.org/generators.html (search for config.generators)
+    config.generators do |generator|
+      # Do not generate helpers since they're unneeded most of the time
+      generator.helper false
+
+      # Do not generate RSpec specs for routes since the vast majority of routes are RESTful
+      generator.test_framework :rspec, routing_specs: false
+    end
   end
 end
