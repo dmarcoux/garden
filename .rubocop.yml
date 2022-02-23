@@ -1,6 +1,7 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   CacheRootDirectory: tmp/rubocop_cache
@@ -20,6 +21,14 @@ Bundler/OrderedGems:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+
+# It would be nice to configure this only for spec/views/**/*, but it's not possible right now...
+RSpec/ExampleLength:
+  Max: 10
+
+# Multiple expectations are useful, especially for spec/views/**/*
+RSpec/MultipleExpectations:
+  Max: 5
 
 # It's unneeded to enforce this for all classes and modules
 Style/Documentation:

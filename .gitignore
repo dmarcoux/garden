@@ -44,3 +44,6 @@
 
 # By convention, dotenv local files contain secrets and we don't want to leak them
 .env.*.local
+
+# Generated when RSpec runs
+/spec/examples.txt

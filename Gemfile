@@ -60,12 +60,18 @@ group :development, :test do
   # All runtime config comes from the UNIX environment, but we use dotenv to
   # store that in files for development and testing
   gem "dotenv-rails"
+  # Behaviour Driven Development for Ruby
+  gem "rspec"
+  # Behaviour Driven Development for Rails
+  gem "rspec-rails"
   # Linter for Ruby
   gem "rubocop", require: false
   # Linter for performance checks in Ruby
   gem "rubocop-performance", require: false
   # Linter for Rails
   gem "rubocop-rails", require: false
+  # Linter for RSpec
+  gem "rubocop-rspec", require: false
 end
 
 group :development do
