@@ -60,6 +60,8 @@ group :development, :test do
   # All runtime config comes from the UNIX environment, but we use dotenv to
   # store that in files for development and testing
   gem "dotenv-rails"
+  # Create fixtures (sample data) for specs
+  gem "factory_bot_rails"
   # Behaviour Driven Development for Ruby
   gem "rspec"
   # Behaviour Driven Development for Rails

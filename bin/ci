@@ -3,8 +3,15 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "[ bin/ci ] Running linters"
+echo "[ bin/ci ] Setting RAILS_ENV to test"
+export RAILS_ENV=test
+
+echo "[ bin/ci ] Linting Ruby code with RuboCop"
 bundle exec rubocop --fail-fast --display-style-guide --fail-level convention
+
+echo "[ bin/ci ] Linting FactoryBot factories, including their traits"
+bundle exec rake db:reset
+bundle exec rake factorybot:lint
 
 echo "[ bin/ci ] Running specs"
 bundle exec rspec
