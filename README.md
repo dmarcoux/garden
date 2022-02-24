@@ -13,7 +13,7 @@ Inside the Docker container, run `bin/setup`.
 
 ### Run the Rails Application
 
-Inside the Docker container, run `bin/run`, then access `http://localhost:3000`.
+Inside the Docker container, run `bin/dev`, then access `http://localhost:3000`.
 
 ### Run Tests and Continuous Integration
 

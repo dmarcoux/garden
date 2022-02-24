@@ -47,4 +47,4 @@ ENV RAILS_PORT $port
 USER web_app_user
 
 # Check if gems are installed, if not install them, then start the Rails server
-CMD (bundle check || bundle install) && bin/run
+CMD (bundle check || bundle install) && bin/dev
