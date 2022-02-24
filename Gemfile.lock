@@ -280,8 +280,8 @@ DEPENDENCIES
   factory_bot_rails
   importmap-rails
   jbuilder
-  puma (~> 5.0)
-  rails (~> 7.0.2, >= 7.0.2.2)
+  puma
+  rails
   rspec
   rspec-rails
   rubocop
@@ -290,7 +290,7 @@ DEPENDENCIES
   rubocop-rspec
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   stimulus-rails
   tailwindcss-rails
   turbo-rails
