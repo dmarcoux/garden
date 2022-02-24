@@ -9,7 +9,10 @@ ENV LANG C.UTF-8
 RUN apt-get update -qq
 
 # Install dependencies for the application
-RUN apt-get install -qq -y build-essential sqlite3 libsqlite3-dev redis-tools
+# SQLite: sqlite3 and libsqlite3-dev
+# Redis: redis-tools (for the Redis CLI)
+# Overmind: tmux
+RUN apt-get install -qq -y build-essential sqlite3 libsqlite3-dev redis-tools tmux
 
 # Set the directory of the application and switch to it
 ENV WORK_DIR /web_app
