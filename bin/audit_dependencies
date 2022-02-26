@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "Download or update (if it's already cached) ruby-advisory-db, which bundler-audit needs"
+bundle exec bundle-audit update
+
+echo "Audit Gemfile.lock for vulnerable versions of gems and insecure gem sources (http://)"
+bundle exec bundle-audit check --no-update

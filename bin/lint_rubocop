@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Linting Ruby code with RuboCop"
+bundle exec rubocop --fail-fast --display-style-guide --fail-level convention

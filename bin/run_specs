@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "Resetting database"
+bundle exec rake db:reset
+
+echo "Running specs"
+bundle exec rspec

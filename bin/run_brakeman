@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "Analyzing code for security vulnerabilities."
+echo "Output will be in tmp/brakeman.html, which can be opened in your browser."
+bundle exec brakeman -q -o tmp/brakeman.html

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "Setting RAILS_ENV to test"
+export RAILS_ENV=test
+
+echo "Resetting test database"
+bundle exec rake db:reset
+
+echo "Linting FactoryBot factories, including their traits"
+bundle exec rake factorybot:lint

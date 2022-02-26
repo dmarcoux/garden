@@ -3,24 +3,12 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "[ bin/ci ] Setting RAILS_ENV to test"
-export RAILS_ENV=test
+bin/lint_rubocop
 
-echo "[ bin/ci ] Linting Ruby code with RuboCop"
-bundle exec rubocop --fail-fast --display-style-guide --fail-level convention
+bin/lint_factorybot
 
-echo "[ bin/ci ] Linting FactoryBot factories, including their traits"
-bundle exec rake db:reset
-bundle exec rake factorybot:lint
+bin/run_specs
 
-echo "[ bin/ci ] Running specs"
-bundle exec rspec
+bin/run_brakeman
 
-echo "[ bin/ci ] Analyzing code for security vulnerabilities."
-echo "[ bin/ci ] Output will be in tmp/brakeman.html, which can be opened in your browser."
-bundle exec brakeman -q -o tmp/brakeman.html
-
-echo "[ bin/ci ] Analyzing Ruby gems for security vulnerabilities"
-bundle exec bundle audit check --update
-
-echo "[ bin/ci ] Done"
+bin/audit_dependencies
