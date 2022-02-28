@@ -49,6 +49,9 @@ gem "bootsnap", require: false
 # Utility-first CSS framework
 gem "tailwindcss-rails"
 
+# Authorization system
+gem "pundit"
+
 group :development, :test do
   # Analyze code for security vulnerabilities
   gem "brakeman"
