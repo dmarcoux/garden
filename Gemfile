@@ -52,6 +52,9 @@ gem "tailwindcss-rails"
 # Authorization system
 gem "pundit"
 
+# Create reusable, testable & encapsulated view components
+gem "view_component"
+
 group :development, :test do
   # Analyze code for security vulnerabilities
   gem "brakeman"

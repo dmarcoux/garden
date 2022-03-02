@@ -27,5 +27,13 @@ module Garden
       # Do not generate RSpec specs for routes since the vast majority of routes are RESTful
       generator.test_framework :rspec, routing_specs: false
     end
+
+    # View components
+    # Preview classes of view components live in:
+    config.view_component.preview_paths << Rails.root.join("app/component_previews")
+    # Previews are served at (we keep the default value - http://HOST:PORT/rails/view_components)
+    # config.view_component.preview_route = "/rails/view_components"
+    # Set the default layout for previews (app/views/layouts/NAME.html.haml)
+    # config.view_component.default_preview_layout = "view_component_previews"
   end
 end
