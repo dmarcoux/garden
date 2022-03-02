@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Delete any stale PID
-rm --force tmp/pids/server.pid
+# Delete any stale PID and Overmind socket
+rm --force tmp/pids/server.pid .overmind.sock
 
 bin/overmind start -f Procfile.dev
