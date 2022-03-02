@@ -22,3 +22,42 @@ Inside the Docker container, run `bin/ci`.
 ### Connect to SQLite Database
 
 Inside the Docker container, run `sqlite3 db/development.sqlite3`.
+
+## Architecture
+
+```mermaid
+  classDiagram
+  Plant "1" --> "0..n" Companion: plant1_id
+  Plant "1" --> "0..n" Companion: plant2_id
+  Plant "1" --> "1..n" PlantName: plant_id
+  Plant "1" --> "0..n" active_storage_attachments: images
+  active_storage_attachments "1" --> "1" active_storage_blobs
+
+  class Plant {
+    +bigint id
+    +string latin_name
+    +tinyint germination_temperature_minimum
+    +tinyint germination_temperature_maximum
+    +tinyint planting_depth
+  }
+
+  class Companion {
+    +bigint plant1_id
+    +bigint plant2_id
+    +enum[good,bad] type
+    +text reason
+  }
+
+  class PlantName {
+    +bigint plant_id
+    +string name
+  }
+
+  class active_storage_attachments {
+    internal from Rails
+  }
+
+  class active_storage_blobs {
+    internal from Rails
+  }
+```
