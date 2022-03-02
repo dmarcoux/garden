@@ -25,6 +25,8 @@ Inside the Docker container, run `sqlite3 db/development.sqlite3`.
 
 ## Architecture
 
+Class diagram generated with [Mermaid](https://github.com/mermaid-js/mermaid).
+
 ```mermaid
   classDiagram
   Plant "1" --> "0..n" Companion: plant1_id
