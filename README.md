@@ -31,12 +31,12 @@ Class diagram generated with [Mermaid](https://github.com/mermaid-js/mermaid).
   classDiagram
   Plant "1" --> "0..n" Companion: plant1_id
   Plant "1" --> "0..n" Companion: plant2_id
-  Plant "1" --> "1..n" PlantName: plant_id
   Plant "1" --> "0..n" active_storage_attachments: images
   active_storage_attachments "1" --> "1" active_storage_blobs
 
   class Plant {
     +bigint id
+    +string common_name
     +string latin_name
     +tinyint germination_temperature_minimum
     +tinyint germination_temperature_maximum
@@ -48,11 +48,6 @@ Class diagram generated with [Mermaid](https://github.com/mermaid-js/mermaid).
     +bigint plant2_id
     +enum[good,bad] type
     +text reason
-  }
-
-  class PlantName {
-    +bigint plant_id
-    +string name
   }
 
   class active_storage_attachments {
