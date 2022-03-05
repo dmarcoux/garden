@@ -1,0 +1,32 @@
+<div id="<%= dom_id plant %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Common name:</strong>
+    <%= plant.common_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Latin name:</strong>
+    <%= plant.latin_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Germination temperature minimum:</strong>
+    <%= plant.germination_temperature_minimum %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Germination temperature maximum:</strong>
+    <%= plant.germination_temperature_maximum %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Planting depth:</strong>
+    <%= plant.planting_depth %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this plant", plant, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this plant', edit_plant_path(plant), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
