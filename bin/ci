@@ -7,6 +7,8 @@ set -e
 echo "Setting RAILS_ENV to test"
 export RAILS_ENV=test
 
+bin/lint_erb
+
 bin/lint_rubocop
 
 bin/lint_factorybot

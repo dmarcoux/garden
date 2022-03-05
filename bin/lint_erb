@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Linting ERB templates with erb-lint"
+bundle exec erblint --lint-all
