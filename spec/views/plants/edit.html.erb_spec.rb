@@ -8,7 +8,7 @@ RSpec.describe "plants/edit", type: :view do
                      common_name: "MyString",
                      latin_name: "MyString",
                      germination_temperature_minimum: 1,
-                     germination_temperature_maximum: 1,
+                     germination_temperature_maximum: 2,
                      planting_depth: 1
                    ))
   end
