@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_05_200105) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_07_155929) do
   create_table "plants", force: :cascade do |t|
-    t.string "common_name"
-    t.string "latin_name"
-    t.integer "germination_temperature_minimum"
-    t.integer "germination_temperature_maximum"
-    t.integer "planting_depth"
+    t.string "common_name", null: false
+    t.string "latin_name", default: "", null: false
+    t.integer "germination_temperature_minimum", null: false
+    t.integer "germination_temperature_maximum", null: false
+    t.integer "planting_depth", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
