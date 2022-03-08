@@ -4,7 +4,8 @@ module.exports = {
   content: [
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*'
+    './app/views/**/*',
+    './app/components/**/*' // Both Ruby and template files, since inline components may also include Taildwind CSS classes
   ],
   theme: {
     extend: {
