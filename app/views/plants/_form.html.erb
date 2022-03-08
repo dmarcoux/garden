@@ -1,6 +1,6 @@
 <%= form_with(model: plant, class: "contents") do |form| %>
   <% if plant.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <div id="error_explanation" class="bg-red-50 text-red-700 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
 
       <ul>
@@ -13,7 +13,7 @@
 
   <div class="my-5">
     <%= form.label :common_name %>
-    <abbr class="text-red-500 text-lg" title="required">*</abbr>
+    <abbr class="text-red-600 text-lg" title="required">*</abbr>
     <%= form.text_field :common_name, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
@@ -26,7 +26,7 @@
     <%= label_tag nil, class: "col-span-2" do %>
       Germination temperatures
       <i>(in Celsius)</i>
-      <abbr class="text-red-500 text-lg" title="required">*</abbr>
+      <abbr class="text-red-600 text-lg" title="required">*</abbr>
     <% end %>
     <%= form.label :germination_temperature_minimum, "Minimum", class: "self-end text-sm" %>
     <%= form.label :germination_temperature_maximum, "Maximum", class: "self-end text-sm" %>
@@ -40,7 +40,7 @@
 
   <div class="my-5">
     <%= form.label :planting_depth %>
-    <abbr class="text-red-500 text-lg" title="required">*</abbr>
+    <abbr class="text-red-600 text-lg" title="required">*</abbr>
     <%= form.number_field :planting_depth, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
