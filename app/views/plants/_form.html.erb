@@ -21,13 +21,11 @@
     <%= form.text_field :latin_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :germination_temperature_minimum %>
+  <div class="my-5 grid grid-cols-2 grid-rows-2">
+    <%= label_tag nil, "Germination temperatures (in Celsius)", class: "col-span-2" %>
+    <%= form.label :germination_temperature_minimum, "Minimum", class: "self-end text-sm" %>
+    <%= form.label :germination_temperature_maximum, "Maximum", class: "self-end text-sm" %>
     <%= form.number_field :germination_temperature_minimum, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :germination_temperature_maximum %>
     <%= form.number_field :germination_temperature_maximum, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
