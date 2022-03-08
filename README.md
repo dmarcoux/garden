@@ -23,6 +23,11 @@ Inside the Docker container, run `bin/ci`.
 
 Inside the Docker container, run `sqlite3 db/development.sqlite3`.
 
+### Connect to Web Application, Redis or Another Process Managed by Overmind
+
+Inside the Docker container, run `bin/overmind connect [process_name]`.
+Disconnect from the process window with `Ctrl + b`, then `d`.
+
 ## Architecture
 
 Class diagram generated with [Mermaid](https://github.com/mermaid-js/mermaid).
