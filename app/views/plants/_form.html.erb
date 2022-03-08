@@ -13,7 +13,8 @@
 
   <div class="my-5">
     <%= form.label :common_name %>
-    <%= form.text_field :common_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <abbr class="text-red-500" title="required">*</abbr>
+    <%= form.text_field :common_name, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
@@ -22,16 +23,21 @@
   </div>
 
   <div class="my-5 grid grid-cols-2 grid-rows-2">
-    <%= label_tag nil, "Germination temperatures (in Celsius)", class: "col-span-2" %>
+    <%= label_tag nil, class: "col-span-2" do %>
+      Germination temperatures
+      <i>(in Celsius)</i>
+      <abbr class="text-red-500" title="required">*</abbr>
+    <% end %>
     <%= form.label :germination_temperature_minimum, "Minimum", class: "self-end text-sm" %>
     <%= form.label :germination_temperature_maximum, "Maximum", class: "self-end text-sm" %>
-    <%= form.number_field :germination_temperature_minimum, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= form.number_field :germination_temperature_maximum, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.number_field :germination_temperature_minimum, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.number_field :germination_temperature_maximum, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
     <%= form.label :planting_depth %>
-    <%= form.number_field :planting_depth, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <abbr class="text-red-500" title="required">*</abbr>
+    <%= form.number_field :planting_depth, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">
