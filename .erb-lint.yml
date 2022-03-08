@@ -14,7 +14,7 @@ linters:
       Layout/InitialIndentation:
         Enabled: false
       Layout/LineLength:
-        Enabled: false
+        Max: 150 # From the default 120, views with their HTML tend to have longer lines and this is fine.
       Layout/TrailingEmptyLines:
         Enabled: false
       Layout/TrailingWhitespace:

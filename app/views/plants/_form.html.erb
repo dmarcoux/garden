@@ -30,8 +30,12 @@
     <% end %>
     <%= form.label :germination_temperature_minimum, "Minimum", class: "self-end text-sm" %>
     <%= form.label :germination_temperature_maximum, "Maximum", class: "self-end text-sm" %>
-    <%= form.number_field :germination_temperature_minimum, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= form.number_field :germination_temperature_maximum, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.number_field :germination_temperature_minimum,
+                          required: true,
+                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.number_field :germination_temperature_maximum,
+                          required: true,
+                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
