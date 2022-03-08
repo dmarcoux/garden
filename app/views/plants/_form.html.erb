@@ -13,7 +13,7 @@
 
   <div class="my-5">
     <%= form.label :common_name %>
-    <abbr class="text-red-600 text-lg" title="required">*</abbr>
+    <%= render RequiredFieldAsteriskComponent.new %>
     <%= form.text_field :common_name, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
@@ -26,7 +26,7 @@
     <%= label_tag nil, class: "col-span-2" do %>
       Germination temperatures
       <i>(in Celsius)</i>
-      <abbr class="text-red-600 text-lg" title="required">*</abbr>
+      <%= render RequiredFieldAsteriskComponent.new %>
     <% end %>
     <%= form.label :germination_temperature_minimum, "Minimum", class: "self-end text-sm" %>
     <%= form.label :germination_temperature_maximum, "Maximum", class: "self-end text-sm" %>
@@ -40,7 +40,7 @@
 
   <div class="my-5">
     <%= form.label :planting_depth %>
-    <abbr class="text-red-600 text-lg" title="required">*</abbr>
+    <%= render RequiredFieldAsteriskComponent.new %>
     <%= form.number_field :planting_depth, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
