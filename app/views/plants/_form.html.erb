@@ -45,6 +45,9 @@
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.button class: "group rounded-lg py-3 px-5 bg-blue-600 disabled:bg-blue-600/75 text-white inline-block font-medium cursor-pointer" do |default_text| %>
+      <span class="inline group-disabled:hidden"><%= default_text %></span>
+      <span class="hidden group-disabled:inline">Processing...</span>
+    <% end %>
   </div>
 <% end %>
