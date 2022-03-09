@@ -24,7 +24,7 @@ RSpec.describe "plants/index", type: :view do
 
   it "renders a list of plants" do
     render
-    assert_select "div>p", text: /Common Name/, count: 2
+    assert_select "div>h2", text: /Common Name/, count: 2
     assert_select "div>p", text: /Latin Name/, count: 2
     assert_select "div>p", text: /2/, count: 2
     assert_select "div>p", text: /3/, count: 2
