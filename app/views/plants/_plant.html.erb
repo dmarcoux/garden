@@ -1,27 +1,25 @@
 <div id="<%= dom_id plant %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Common name:</strong>
-    <%= plant.common_name %>
-  </p>
+  <h2 class="text-xl italic"><%= truncate(plant.common_name, length: 50) %></h2>
+
+  <%- unless plant.latin_name.empty? %>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Latin name</strong>
+      <%= plant.latin_name %>
+    </p>
+  <% end %>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Latin name:</strong>
-    <%= plant.latin_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Germination temperature minimum:</strong>
+    <strong class="block font-medium mb-1">Germination temperatures</strong>
     <%= plant.germination_temperature_minimum %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Germination temperature maximum:</strong>
+    -
     <%= plant.germination_temperature_maximum %>
+    °C
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Planting depth:</strong>
+    <strong class="block font-medium mb-1">Planting depth</strong>
     <%= plant.planting_depth %>
+    cm
   </p>
 
   <% if action_name != "show" %>
