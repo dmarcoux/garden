@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Ensure we're running in the test environment
+export RAILS_ENV=test
+
 echo "Resetting test database"
 bundle exec rake db:reset
 
