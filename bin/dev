@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+# Check if gems are installed, if not install them
+bundle check || bundle install
+
 # Delete any stale PID and Overmind socket
 rm --force tmp/pids/server.pid .overmind.sock
 
-bin/overmind start -f Procfile.dev
+# Propagate signals to Overmind by using `exec` (Details at http://veithen.io/2014/11/16/sigterm-propagation.html)
+exec bin/overmind start -f Procfile.dev

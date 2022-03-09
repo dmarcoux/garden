@@ -46,5 +46,6 @@ ENV RAILS_PORT $port
 # Everything after the following line will be executed as the new user
 USER web_app_user
 
-# Check if gems are installed, if not install them, then start the Rails server
-CMD (bundle check || bundle install) && bin/dev
+# Using exec form of CMD to correctly pass signals to bin/dev, thus gently stopping bin/dev
+# Details at https://vsupalov.com/docker-compose-stop-slow/#where-are-my-signals
+CMD ["bin/dev"]
