@@ -3,7 +3,7 @@
 # Check if gems are installed, if not install them
 bundle check || bundle install
 
-# Delete any stale PID and Overmind socket
+# Delete any stale PID and Overmind socket, just in case the Rails server or Overmind crashed
 rm --force tmp/pids/server.pid .overmind.sock
 
 # Propagate signals to Overmind by using `exec` (Details at http://veithen.io/2014/11/16/sigterm-propagation.html)
