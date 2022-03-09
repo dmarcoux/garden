@@ -39,8 +39,11 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :planting_depth %>
-    <%= render RequiredFieldAsteriskComponent.new %>
+    <%= form.label :planting_depth do %>
+      Planting depth
+      <i>(in centimeters)</i>
+      <%= render RequiredFieldAsteriskComponent.new %>
+    <% end %>
     <%= form.number_field :planting_depth, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
