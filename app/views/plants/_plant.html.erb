@@ -1,4 +1,5 @@
 <div id="<%= dom_id plant %>">
+  <%# TODO: Display complete common_name by clicking on the name %>
   <h2 class="text-xl italic"><%= truncate(plant.common_name, length: 50) %></h2>
 
   <%- unless plant.latin_name.empty? %>
