@@ -18,6 +18,6 @@ class Plant < ApplicationRecord
                   message: "(%<value>s) must be greater than germination temperature minimum (%<count>s)"
                 },
                 if: -> { germination_temperature_minimum.present? }
-    v.validates :planting_depth, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+    v.validates :planting_depth, numericality: { only_integer: true, in: 0..127 }
   end
 end
