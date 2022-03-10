@@ -15,7 +15,7 @@ Inside the Docker container, run `bin/setup`.
 
 Inside the Docker container, run `bin/dev`, then access `http://localhost:3000`.
 
-### Run Tests and Continuous Integration
+### Run Linters, Tests and Audits
 
 Inside the Docker container, run `bin/ci`.
 
