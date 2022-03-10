@@ -1,6 +1,8 @@
 <div id="<%= dom_id plant %>">
   <%# TODO: Display complete common_name by clicking on the name %>
-  <h2 class="text-xl italic"><%= truncate(plant.common_name, length: 50) %></h2>
+  <%= render HeadingComponent.new(2, extra_css_classes: "italic") do %>
+    <%= truncate(plant.common_name, length: 50) %>
+  <% end %>
 
   <%- unless plant.latin_name.empty? %>
     <p class="my-5">
