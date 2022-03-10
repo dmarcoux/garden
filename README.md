@@ -63,3 +63,8 @@ Class diagram generated with [Mermaid](https://github.com/mermaid-js/mermaid).
     internal from Rails
   }
 ```
+
+## Design
+
+Avoid creating global CSS rules by relying solely on the utility-first approach
+of Tailwind CSS to create view components whenever there is repetition.
