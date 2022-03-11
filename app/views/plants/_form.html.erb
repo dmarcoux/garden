@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :common_name %>
-    <%= render RequiredFieldAsteriskComponent.new %>
+    <%= form.label :common_name do %>
+      Common name
+      <%= render RequiredFieldAsteriskComponent.new %>
+    <% end %>
     <%= form.text_field :common_name, required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
