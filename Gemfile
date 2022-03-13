@@ -55,6 +55,9 @@ gem "pundit"
 # Create reusable, testable & encapsulated view components
 gem "view_component"
 
+# Catch unsafe database migrations in development
+gem "strong_migrations"
+
 group :development, :test do
   # Analyze code for security vulnerabilities
   gem "brakeman"
