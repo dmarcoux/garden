@@ -306,6 +306,7 @@ DEPENDENCIES
   factory_bot_rails
   importmap-rails
   jbuilder
+  nokogiri
   puma
   pundit
   rails
