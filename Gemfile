@@ -58,6 +58,9 @@ gem "view_component"
 # Catch unsafe database migrations in development
 gem "strong_migrations"
 
+# Read, write, modify, and query XML/HTML documents
+gem "nokogiri"
+
 group :development, :test do
   # Analyze code for security vulnerabilities
   gem "brakeman"

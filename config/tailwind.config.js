@@ -5,7 +5,8 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/views/**/*.{erb,haml,html,slim}',
-    './app/components/**/*' // Both Ruby and template files, since inline components may also include Taildwind CSS classes
+    './app/components/**/*', // Both Ruby and template files, since inline components may also include Taildwind CSS classes
+    './app/lib/render_validation_errors.rb' // Generates HTML for validation errors in forms
   ],
   theme: {
     extend: {
