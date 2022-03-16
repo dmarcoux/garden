@@ -1,10 +1,4 @@
 <%= form_with(model: plant, class: "contents") do |form| %>
-  <% if plant.errors.any? %>
-    <%= render HeadingComponent.new(2, extra_css_classes: "bg-red-50 text-red-700 px-3 py-2 font-medium rounded-lg mt-3") do %>
-      <%= "#{pluralize(plant.errors.count, 'error')} prohibited this plant from being saved." %>
-    <% end %>
-  <% end %>
-
   <div class="my-5">
     <%= form.label :common_name do %>
       Common name

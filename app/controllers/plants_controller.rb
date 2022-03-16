@@ -28,7 +28,10 @@ class PlantsController < ApplicationController
         format.html { redirect_to plant_url(@plant), notice: "Plant was successfully created." }
         format.json { render :show, status: :created, location: @plant }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html do
+          flash.now[:alert] = "#{view_context.pluralize(@plant.errors.count, 'error')} prohibited this plant from being created."
+          render :new, status: :unprocessable_entity
+        end
         format.json { render json: @plant.errors, status: :unprocessable_entity }
       end
     end
@@ -41,7 +44,10 @@ class PlantsController < ApplicationController
         format.html { redirect_to plant_url(@plant), notice: "Plant was successfully updated." }
         format.json { render :show, status: :ok, location: @plant }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html do
+          flash.now[:alert] = "#{view_context.pluralize(@plant.errors.count, 'error')} prohibited this plant from being updated."
+          render :edit, status: :unprocessable_entity
+        end
         format.json { render json: @plant.errors, status: :unprocessable_entity }
       end
     end
