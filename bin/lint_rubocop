@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 echo "Linting Ruby code with RuboCop"
-bundle exec rubocop --fail-fast --display-style-guide --fail-level convention
+bundle exec rubocop --fail-fast --display-style-guide --fail-level convention "$@" # all arguments passed to this script are passed to RuboCop

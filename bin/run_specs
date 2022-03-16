@@ -13,4 +13,4 @@ if [[ "$CI" = true ]]; then
 fi
 
 echo "Running specs"
-bundle exec rspec
+bundle exec rspec "$@" # all arguments passed to this script are passed to RSpec
