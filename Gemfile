@@ -69,8 +69,6 @@ gem "sprockets-rails"
 gem "sqlite3"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-# Catch unsafe database migrations in development
-gem "strong_migrations"
 # Utility-first CSS framework
 gem "tailwindcss-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
