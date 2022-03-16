@@ -63,6 +63,8 @@ gem "pundit"
 gem "rails"
 # Use Redis adapter to run Action Cable in production
 # gem "redis"
+# Authentication framework
+gem "rodauth-rails"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
