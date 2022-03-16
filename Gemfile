@@ -71,10 +71,6 @@ group :development, :test do
   gem "rubocop-rspec", require: false
 end
 
-# group :development do
-
-# end
-
 group :test do
   # Acceptance test framework for system testing (https://guides.rubyonrails.org/testing.html#system-testing)
   gem "capybara"
