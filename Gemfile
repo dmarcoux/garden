@@ -94,8 +94,10 @@ end
 # end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  # Acceptance test framework for system testing (https://guides.rubyonrails.org/testing.html#system-testing)
   gem "capybara"
+  # Driver used by capybara to execute tests
   gem "selenium-webdriver"
+  # Easily install and update all supported webdrivers for Selenium
   gem "webdrivers"
 end

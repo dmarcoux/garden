@@ -15,6 +15,10 @@ AllCops:
   NewCops: enable
   UseCache: true
 
+# Each gem in the Gemfile should have a comment explaining its purpose in the project
+Bundler/GemComment:
+  Enabled: true
+
 Bundler/OrderedGems:
   TreatCommentsAsGroupSeparators: false
 
