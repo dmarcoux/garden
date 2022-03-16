@@ -4,6 +4,43 @@ source "https://rubygems.org"
 
 ruby "3.1.1"
 
+group :development, :test do
+  # Analyze code for security vulnerabilities
+  gem "brakeman"
+  # Analyze gems for known vulnerabilities
+  gem "bundler-audit"
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  # All runtime config comes from the UNIX environment, but we use dotenv to
+  # store that in files for development and testing
+  gem "dotenv-rails"
+  # Linter for ERB
+  gem "erb_lint", require: false
+  # Create fixtures (sample data) for specs
+  gem "factory_bot_rails"
+  # Behaviour Driven Development for Ruby
+  gem "rspec"
+  # Behaviour Driven Development for Rails
+  gem "rspec-rails"
+  # Linter for Ruby
+  gem "rubocop", require: false
+  # Linter for performance checks in Ruby
+  gem "rubocop-performance", require: false
+  # Linter for Rails
+  gem "rubocop-rails", require: false
+  # Linter for RSpec
+  gem "rubocop-rspec", require: false
+end
+
+group :test do
+  # Acceptance test framework for system testing (https://guides.rubyonrails.org/testing.html#system-testing)
+  gem "capybara"
+  # Driver used by capybara to execute tests
+  gem "selenium-webdriver"
+  # Easily install and update all supported webdrivers for Selenium
+  gem "webdrivers"
+end
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt"
 # Reduces boot times through caching; required in config/boot.rb
@@ -42,40 +79,3 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 # Create reusable, testable & encapsulated view components
 gem "view_component"
-
-group :development, :test do
-  # Analyze code for security vulnerabilities
-  gem "brakeman"
-  # Analyze gems for known vulnerabilities
-  gem "bundler-audit"
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[mri mingw x64_mingw]
-  # All runtime config comes from the UNIX environment, but we use dotenv to
-  # store that in files for development and testing
-  gem "dotenv-rails"
-  # Linter for ERB
-  gem "erb_lint", require: false
-  # Create fixtures (sample data) for specs
-  gem "factory_bot_rails"
-  # Behaviour Driven Development for Ruby
-  gem "rspec"
-  # Behaviour Driven Development for Rails
-  gem "rspec-rails"
-  # Linter for Ruby
-  gem "rubocop", require: false
-  # Linter for performance checks in Ruby
-  gem "rubocop-performance", require: false
-  # Linter for Rails
-  gem "rubocop-rails", require: false
-  # Linter for RSpec
-  gem "rubocop-rspec", require: false
-end
-
-group :test do
-  # Acceptance test framework for system testing (https://guides.rubyonrails.org/testing.html#system-testing)
-  gem "capybara"
-  # Driver used by capybara to execute tests
-  gem "selenium-webdriver"
-  # Easily install and update all supported webdrivers for Selenium
-  gem "webdrivers"
-end
