@@ -26,6 +26,9 @@ module Garden
 
       # Do not generate RSpec specs for routes since the vast majority of routes are RESTful
       generator.test_framework :rspec, routing_specs: false
+
+      # Use the responders controller from the responders gem
+      generator.scaffold_controller :responders_controller
     end
 
     # View components
