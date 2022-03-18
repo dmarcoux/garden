@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class RodauthMain < Rodauth::Rails::Auth
   configure do
     # List of authentication features that are loaded.
     enable :create_account, :verify_account, :verify_account_grace_period,
-      :login, :logout, :remember,
-      :reset_password, :change_password, :change_password_notify,
-      :change_login, :verify_login_change, :close_account
+           :login, :logout, :remember,
+           :reset_password, :change_password, :change_password_notify,
+           :change_login, :verify_login_change, :close_account
 
     # See the Rodauth documentation for the list of available config options:
     # http://rodauth.jeremyevans.net/documentation.html
@@ -48,7 +50,8 @@ class RodauthMain < Rodauth::Rails::Auth
       RodauthMailer.verify_account(account_id, verify_account_key_value)
     end
     create_verify_login_change_email do |_login|
-      RodauthMailer.verify_login_change(account_id, verify_login_change_old_login, verify_login_change_new_login, verify_login_change_key_value)
+      RodauthMailer.verify_login_change(account_id, verify_login_change_old_login, verify_login_change_new_login,
+                                        verify_login_change_key_value)
     end
     create_password_changed_email do
       RodauthMailer.password_changed(account_id)

@@ -29,7 +29,8 @@ class PlantsController < ApplicationController
         format.json { render :show, status: :created, location: @plant }
       else
         format.html do
-          flash.now[:alert] = "#{view_context.pluralize(@plant.errors.count, 'error')} prohibited this plant from being created."
+          flash.now[:alert] =
+            "#{view_context.pluralize(@plant.errors.count, 'error')} prohibited this plant from being created."
           render :new, status: :unprocessable_entity
         end
         format.json { render json: @plant.errors, status: :unprocessable_entity }
@@ -45,7 +46,8 @@ class PlantsController < ApplicationController
         format.json { render :show, status: :ok, location: @plant }
       else
         format.html do
-          flash.now[:alert] = "#{view_context.pluralize(@plant.errors.count, 'error')} prohibited this plant from being updated."
+          flash.now[:alert] =
+            "#{view_context.pluralize(@plant.errors.count, 'error')} prohibited this plant from being updated."
           render :edit, status: :unprocessable_entity
         end
         format.json { render json: @plant.errors, status: :unprocessable_entity }

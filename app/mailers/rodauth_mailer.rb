@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RodauthMailer < ApplicationMailer
   def verify_account(account_id, key)
     @email_link = rodauth.verify_account_url(key: email_token(account_id, key))
