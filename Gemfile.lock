@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/heartcombo/responders.git
+  revision: 56d00ac8894b38de9eff177cb50dda110ff79440
+  ref: 56d00ac
+  specs:
+    responders (3.0.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -329,6 +338,7 @@ DEPENDENCIES
   puma
   pundit
   rails
+  responders!
   rodauth-rails
   rspec
   rspec-rails

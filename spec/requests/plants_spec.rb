@@ -93,7 +93,7 @@ RSpec.describe "/plants", type: :request do
       it "renders errors" do
         post plants_url, params: { plant: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.body).to include("errors prohibited this plant from being created.")
+        expect(response.body).to include("Plant could not be created.")
       end
     end
   end
@@ -129,7 +129,7 @@ RSpec.describe "/plants", type: :request do
         plant = Plant.create! valid_attributes
         patch plant_url(plant), params: { plant: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.body).to include("errors prohibited this plant from being updated.")
+        expect(response.body).to include("Plant could not be updated.")
       end
     end
   end

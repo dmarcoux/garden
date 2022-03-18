@@ -63,6 +63,9 @@ gem "pundit"
 gem "rails"
 # Use Redis adapter to run Action Cable in production
 # gem "redis"
+# Dry up Rails controllers with a set of responders (respond_to, respond_with)
+# github + ref: For flash messages to work with Turbo... Until a new gem version is cut
+gem "responders", github: "heartcombo/responders", ref: "56d00ac"
 # Authentication framework
 gem "rodauth-rails"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
