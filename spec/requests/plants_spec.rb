@@ -19,11 +19,23 @@ RSpec.describe "/plants", type: :request do
   # Plant. As you add validations to Plant, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip("Add a hash of attributes valid for your model")
+    {
+      common_name: "My common name",
+      latin_name: "My latin name",
+      germination_temperature_minimum: 1,
+      germination_temperature_maximum: 2,
+      planting_depth: 3
+    }
   end
 
   let(:invalid_attributes) do
-    skip("Add a hash of attributes invalid for your model")
+    {
+      common_name: "",
+      latin_name: nil,
+      germination_temperature_minimum: 2,
+      germination_temperature_maximum: 1,
+      planting_depth: 999
+    }
   end
 
   describe "GET /index" do
@@ -78,9 +90,10 @@ RSpec.describe "/plants", type: :request do
         end.to change(Plant, :count).by(0)
       end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
+      it "renders errors" do
         post plants_url, params: { plant: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.body).to include("errors prohibited this plant from being created.")
       end
     end
   end
@@ -107,10 +120,11 @@ RSpec.describe "/plants", type: :request do
     end
 
     context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
+      it "renders errors" do
         plant = Plant.create! valid_attributes
         patch plant_url(plant), params: { plant: invalid_attributes }
-        expect(response).to be_successful
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.body).to include("errors prohibited this plant from being updated.")
       end
     end
   end
