@@ -101,14 +101,19 @@ RSpec.describe "/plants", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) do
-        skip("Add a hash of attributes valid for your model")
+        {
+          common_name: "My new common name",
+          latin_name: "My new latin name",
+          germination_temperature_minimum: 10,
+          germination_temperature_maximum: 20,
+          planting_depth: 5
+        }
       end
 
       it "updates the requested plant" do
         plant = Plant.create! valid_attributes
         patch plant_url(plant), params: { plant: new_attributes }
-        plant.reload
-        skip("Add assertions for updated state")
+        expect(plant.reload).to have_attributes(new_attributes)
       end
 
       it "redirects to the plant" do
