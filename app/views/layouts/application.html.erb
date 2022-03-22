@@ -13,7 +13,7 @@
 
   <body class="h-full">
     <div class="min-h-full">
-      <nav class="bg-white border-b border-gray-200">
+      <nav data-controller="toggle" data-toggle-hidden-class="hidden" class="bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between h-16">
             <div class="flex">
@@ -27,11 +27,11 @@
                 <%= render NavLinkComponent.new("Plants", plants_path, current_page?(plants_path)).with_variant(:desktop) %>
               </div>
             </div>
-            <div class="hidden sm:ml-6 sm:flex sm:items-center" data-controller="toggle" data-toggle-hidden-class="hidden">
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
               <!-- Profile dropdown -->
               <div class="ml-3 relative">
                 <div>
-                  <button type="button" data-toggle-target="trigger" data-action="click->toggle#toggle click@window->toggle#hide" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <button type="button" data-toggle-target="desktopMenu" data-action="click->toggle#toggle click@window->toggle#hide" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="sr-only">Open user menu</span>
                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                   </button>
@@ -47,7 +47,7 @@
                   From: "transform opacity-100 scale-100"
                   To: "transform opacity-0 scale-95"
                 -->
-                <div data-toggle-target="item" class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <div data-toggle-item="desktopMenu" class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   <!-- TODO: Use rodauth-rails paths here -->
                   <!-- Active: "bg-gray-100", Not Active: "" -->
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"> Your Profile </a>
@@ -60,7 +60,7 @@
             </div>
             <div class="-mr-2 flex items-center sm:hidden">
               <!-- Mobile menu button -->
-              <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+              <button type="button" data-toggle-target="mobileMenu" data-action"click->toggle#toggle click@window->toggle#hide" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <!--
                   Heroicon name: outline/menu
@@ -84,7 +84,7 @@
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="hidden sm:hidden" id="mobile-menu">
+        <div data-toggle-item="mobileMenu" class="hidden sm:hidden" id="mobile-menu">
           <div class="pt-2 pb-3 space-y-1">
             <%= render NavLinkComponent.new("Home", root_path, current_page?(root_path)).with_variant(:mobile) %>
             <%= render NavLinkComponent.new("Plants", plants_path, current_page?(plants_path)).with_variant(:mobile) %>

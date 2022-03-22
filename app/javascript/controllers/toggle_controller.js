@@ -13,7 +13,7 @@ import { Controller } from "@hotwired/stimulus"
 //   </ul>
 // </div>
 export default class extends Controller {
-  static targets = ["trigger", "item"]
+  // static targets = ["trigger", "item"]
   static classes = ["hidden"]
 
   connect() {
@@ -23,6 +23,8 @@ export default class extends Controller {
 
   toggle(event) {
     console.log("toggle")
+    console.log(event.currentTarget)
+    console.log(event.target)
     this.triggerTarget.setAttribute("aria-expanded", !(this.triggerTarget.getAttribute("aria-expanded") === "true"))
 
     this.itemTargets.forEach(item => {
