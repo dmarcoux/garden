@@ -1,3 +1,5 @@
+<%= content_for(:page_title, I18n.t("plants.edit.page_title", plant: @plant.common_name)) %>
+
 <div class="mx-auto md:w-2/3 w-full">
   <%= render HeadingComponent.new(1).with_content("Editing plant") %>
 

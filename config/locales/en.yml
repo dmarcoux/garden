@@ -30,4 +30,17 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  website_title: "Garden"
+  plants:
+    index:
+      page_title: "Plants"
+    show:
+      page_title: "Plant %{plant}"
+    edit:
+      page_title: "Edit Plant %{plant}"
+    update:
+      page_title: "Edit Plant %{plant}"
+    new:
+      page_title: "New Plant"
+    create:
+      page_title: "New Plant"
