@@ -1,8 +1,6 @@
 <%= content_for(:page_title, I18n.t("plants.edit.page_title", plant: @plant.common_name)) %>
 
 <div class="mx-auto md:w-2/3 w-full">
-  <%= render HeadingComponent.new(1).with_content("Editing plant") %>
-
   <%= render "form", plant: @plant %>
 
   <%= link_to "Show this plant", @plant, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

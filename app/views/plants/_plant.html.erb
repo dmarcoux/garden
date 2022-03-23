@@ -1,7 +1,9 @@
 <div id="<%= dom_id plant %>">
-  <%# TODO: Display complete common_name by clicking on the name %>
-  <%= render HeadingComponent.new(2, extra_css_classes: "italic") do %>
-    <%= truncate(plant.common_name, length: 50) %>
+  <% if action_name != "show" %>
+    <%# TODO: Display complete common_name by clicking on the name %>
+    <%= render HeadingComponent.new(2, extra_css_classes: "italic") do %>
+      <%= truncate(plant.common_name, length: 50) %>
+    <% end %>
   <% end %>
 
   <%- unless plant.latin_name.empty? %>
