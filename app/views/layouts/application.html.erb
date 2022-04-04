@@ -22,8 +22,8 @@
                 <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow">
               </div>
               <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                <%= render NavLinkComponent.new("Home", root_path, current_page?(root_path)).with_variant(:desktop) %>
-                <%= render NavLinkComponent.new("Plants", plants_path, controller_name == "plants").with_variant(:desktop) %>
+                <%= render NavLinkDesktopComponent.new("Home", root_path, current_page?(root_path)) %>
+                <%= render NavLinkDesktopComponent.new("Plants", plants_path, controller_name == "plants") %>
               </div>
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
@@ -93,8 +93,8 @@
         <!-- Mobile menu, show/hide based on menu state. -->
         <div class="sm:hidden" id="mobile-menu">
           <div class="pt-2 pb-3 space-y-1">
-            <%= render NavLinkComponent.new("Home", root_path, current_page?(root_path)).with_variant(:mobile) %>
-            <%= render NavLinkComponent.new("Plants", plants_path, controller_name == "plants").with_variant(:mobile) %>
+            <%= render NavLinkMobileComponent.new("Home", root_path, current_page?(root_path)) %>
+            <%= render NavLinkMobileComponent.new("Plants", plants_path, controller_name == "plants") %>
           </div>
           <div class="pt-4 pb-3 border-t border-gray-200">
             <div class="flex items-center px-4">
