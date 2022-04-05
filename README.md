@@ -6,26 +6,27 @@
 2. Run `bin/setup_history_files`
 3. With [docker-compose](https://github.com/docker/compose), spin up development environment: `docker-compose up`.
 4. Access the Docker container `web_app` with `docker exec -it CONTAINER_ID bash`.
+5. Do what you need to do. Some examples are listed below...
 
-### Setup
+### Setup the Rails Application
 
-Inside the Docker container, run `bin/setup`.
+Run `bin/setup`.
 
 ### Run the Rails Application
 
-Inside the Docker container, run `bin/dev`, then access `http://localhost:3000`.
+Run `bin/dev`, then access `http://localhost:3000`.
 
 ### Run Linters, Tests and Audits
 
-Inside the Docker container, run `bin/ci`.
+Run `bin/ci`.
 
 ### Connect to SQLite Database
 
-Inside the Docker container, run `sqlite3 db/development.sqlite3`.
+Run `sqlite3 db/development.sqlite3`.
 
 ### Connect to Web Application, Redis or Another Process Managed by Overmind
 
-Inside the Docker container, run `bin/overmind connect [process_name]`.
+Run `bin/overmind connect [process_name]`.
 Disconnect from the process window with `Ctrl + b`, then `d`.
 
 ## Architecture
