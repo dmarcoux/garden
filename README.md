@@ -29,6 +29,10 @@ Run `sqlite3 db/development.sqlite3`.
 Run `bin/overmind connect [process_name]`.
 Disconnect from the process window with `Ctrl + b`, then `d`.
 
+### Manage JavaScript Dependencies
+
+Run `bin/importmap` to see the available commands.
+
 ## Architecture
 
 Class diagram generated with [Mermaid](https://github.com/mermaid-js/mermaid).
