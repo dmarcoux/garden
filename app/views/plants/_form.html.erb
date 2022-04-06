@@ -12,20 +12,24 @@
     <%= form.text_field :latin_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5 grid grid-cols-2 grid-rows-2">
+  <div class="my-5 grid grid-cols-2 gap-x-1">
     <%= label_tag nil, class: "col-span-2" do %>
       Germination temperatures
       <i>(in Celsius)</i>
       <%= render RequiredFieldAsteriskComponent.new %>
     <% end %>
-    <%= form.label :germination_temperature_minimum, "Minimum", class: "self-end text-sm" %>
-    <%= form.label :germination_temperature_maximum, "Maximum", class: "self-end text-sm" %>
-    <%= form.number_field :germination_temperature_minimum,
-                          required: true,
-                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= form.number_field :germination_temperature_maximum,
-                          required: true,
-                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <fieldset>
+      <%= form.label :germination_temperature_minimum, "Minimum", class: "text-sm" %>
+      <%= form.number_field :germination_temperature_minimum,
+                            required: true,
+                            class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </fieldset>
+    <fieldset>
+      <%= form.label :germination_temperature_maximum, "Maximum", class: "text-sm" %>
+      <%= form.number_field :germination_temperature_maximum,
+                            required: true,
+                            class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </fieldset>
   </div>
 
   <div class="my-5">
